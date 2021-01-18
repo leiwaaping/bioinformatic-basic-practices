@@ -41,7 +41,7 @@ dim(dat)
 ```
 - check missing data  
 
-```{r}
+```
 #check missing value
 f<-function(x) sum(is.na(x))
 #1 = summarize by row; 2= summarize by column
@@ -51,12 +51,16 @@ head(d[order(d[,1],decreasing=TRUE),])
 
 #convert missing value to 0
 dat[is.na(dat)] <- 0
+```
 
-```{r}
+- **pearson correlation test**  
+test correlation between two samples, here take NPC0001PT00264T00264 and NPC0001PT00004T00004 as an example.  
+Generate correlation plot (using R) between quantified genes from two samples (or gene from polyA+ and total RNA-seq).Don't forget to log the RNA expression before scatter plot.  
 
-test correlation between two samples, here take NPC0001PT00264T00264 and NPC0001PT00004T00004 as an example.Don't forget to log the RNA expression before scatter plot.  
+```
+#install.packages("ggplot2")
+#install.packages("dplyr")
 
-```{r}
 library(ggplot2)
 library(dplyr)
 
@@ -64,13 +68,83 @@ a=dat[,"NPC0001PT00264T00264"]
 b=dat[,"NPC0001PT00004T00004"]
 cor(a,b,method="pearson")
 ggplot(dat,aes(x=log(dat[,"NPC0001PT00264T00264"]),y=log(dat[,"NPC0001PT00004T00004"])))+ geom_point(size=1,shape=15)+geom_smooth(method=lm)
-```{r}
+```
+
+multiple correlation test for the whole matrix.  
+
+```
+c=cor(dat,method="pearson")
+head(c)
+```
+- gain sample information
+see file *GSE102349_series_matrix_survival.csv*, clinical file should involved Sample ID, "event", "time to event" and "clinical stage" extracted from file *GSE102349_series_matrix.txt.gz*. Here we also group samples based on clinical stage. 
+
+```
+info <- as.data.frame(read.table("GSE102349_series_matrix_survival.csv",header = TRUE,sep = ",", dec = ".",na.strings = "NA",stringsAsFactors=FALSE,check.names = FALSE))
+row.names(info) <- info[,1]
+info<-info[,-1]
+dim(info)
+
+#remove missing data and filter out clinical stage I and II samples
+info=info[!info[, "time"] == "N/A",]
+info=info[info[, "clinical stage"] == "III" | info[, "clinical stage"] == "IV",]
+
+#set time to numeric datatype
+info$time=as.numeric(as.character(info$time))
+
+dim(info)
+head(info)
+table(info$`clinical stage`)
+```
+
+- **survival plot**  
+
+```
+#install.packages("survminer")
+#install.packages("survival")
+
+library(survival)
+library(ggplot2)
+library(survminer)
+library(dplyr)
+
+#set time value to numeric 
+info$time=as.numeric(as.character(info$time))
+
+#set status value to numeric
+a <- sub("Disease progression",1,info$event)
+info$event <- as.numeric(as.character(sub("Last follow-up",0,a)))
+head(info)
+
+coxph(Surv(time, event)~clinical_stage, data=info)
+fit <- survfit(Surv(time, event)~clinical_stage, data=info)
+ggsurvplot(fit, conf.int=TRUE, pval=TRUE)
+```
+
+
+- **Perform differential gene expression analysis** using [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)  
+```
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("edgeR")
+```
+
+
+
+
+- **ploting heatmap** 
+
+```
+#install.packages("pheatmap")
+```
 
 
 
 
 *************************
-*Q1:what is the difference among pearson correlation, spearman collelation and kendall collelation*
+*Q1:How large difference among the results from pearson correlation, spearman collelation and kendall collelation*
+*Q2:which raw information should be extracted from GSE102349_series_matrix.txt file?*
 
 
 
