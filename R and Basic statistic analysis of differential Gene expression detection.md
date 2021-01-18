@@ -52,7 +52,7 @@ head(d[order(d[,1],decreasing=TRUE),])
 #convert missing value to 0
 dat[is.na(dat)] <- 0
 
-```
+```{r}
 
 test correlation between two samples, here take NPC0001PT00264T00264 and NPC0001PT00004T00004 as an example.Don't forget to log the RNA expression before scatter plot.  
 
