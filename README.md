@@ -32,3 +32,7 @@ The **shell** acts as an interface between the user and the kernel. Most Linux d
 3. Also download the reference human genome and appropriate annotations from ENCODE (https://www.encodeproject.org/data-standards/reference-sequences/). Need:
   - **Reference genome** - GRCh38_no_alt_analysis_set_GCA_000001405.15
   - Gene annotations - ENCFF159KBI  
+  
+  
+  ### Download data (for user with server)
+  1. Download **fastq file(raw reads data)** for [GSE102349](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE102349)
