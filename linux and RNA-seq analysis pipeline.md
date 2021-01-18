@@ -111,7 +111,7 @@ STAR --runThreadN N --genomeDir ref_index/ --readFilesIn ~/nas/Prcatices/fastq/S
 5. **Quantifying reads** using [featureCounts](http://subread.sourceforge.net/)  
 ```
 makdir count_result/
-featureCounts -T N -a  ~/nas/Prcatices/ref/hg19.refGene.gtf -o count_result/ bam/SRR5908747Aligned.out.sam
+featureCounts -T N -a  ~/nas/Prcatices/ref/hg19.refGene.gtf -o count_result/SRR5908747count.txt bam/SRR5908747Aligned.out.sam
 ``` 
 
 
