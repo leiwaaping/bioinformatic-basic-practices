@@ -16,7 +16,9 @@ The **shell** acts as an interface between the user and the kernel. Most Linux d
 *Q2：What ERRORs did you meet and how with deal with those errors?*
 *Q3: if you are using remote server, how to transfer files between server and your local PC? (hint: scp for Mac, xftp for Windows)* 
 
-
+  
+    
+    
 ## RNA-seq analysis pipelines
 
 ### Download data (for user with individual PC)
@@ -24,8 +26,8 @@ The **shell** acts as an interface between the user and the kernel. Most Linux d
 1.  Search **fastq file(raw reads data)** for ENCODE K562 polyA+ RNA-seq data.  
   - For polyA+ RNA, we will use this: https://www.encodeproject.org/experiments/ENCSR000AEM/
   - For total RNA, we will use this: https://www.encodeproject.org/experiments/ENCSR000AEL/
-  - Note that processed files are already on those webpages, but it will be good to start from the raw fastq files as it will help you understand the process and you will all the raw files alter for TE analysis.
-
+  - Note that processed files are already on those webpages, but it will be good to start from the raw fastq files as it will help you understand the process and you will all the raw files alter for TE analysis.  
+  
 2. Download files. You will find the raw sequencing files on the "file details" tab from the respective links. The RNA-seq files are paired end so there are two files (Read 1 and Read 2) for each replicate. Download both ends for both replicates for both polyA+ and total RNA. There should be 8 files in total.
   - You can get the url link for the fastq files by right clicking and coping the download icon next to the Accession. Download the files to the server directly using wget with the url.
   - After you download the files rename them appropriately (can also use wget options to rename the file during download).
@@ -40,6 +42,7 @@ The **shell** acts as an interface between the user and the kernel. Most Linux d
   - click in samples "GSM2735202" - click SRA "SRX3070255" - get Run ID [SRR5908747](https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR5908747)
   
  For saving times, aLL files have download to Jason's lab server under path ~/nas/Prcatices/  
+ 
   2. Download SRA file and convert SRA file to Pair end fastq files (1 SRA will generate 2 fastq file)
   ```
   prefetch SRR5908747
@@ -50,11 +53,15 @@ The **shell** acts as an interface between the user and the kernel. Most Linux d
   - **Reference genome** - hg38.fa.gz  
   - **Gene annotations** - genes/hg38.refGene.gtf.gz  
   ```
-  #Use `wget` to download in server directly.
+  #Use `wget` and download files to server directly.
   wget http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz
   wget https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/genes/hg38.refGene.gtf.gz
   ```
   
+  *Q1: concepts understand:  
+  a. Exon and Intron  
+  b. Gene Expression 
+  *
   
   
   
