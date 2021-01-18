@@ -12,9 +12,9 @@ The **shell** acts as an interface between the user and the kernel. Most Linux d
 ### practices tutorial
   - UNIX Tutorial for Beginners http://www.ee.surrey.ac.uk/Teaching/Unix/ 
 
-*Q1: Define relative path and absolute path*
-*Q2：What ERRORs did you meet and how with deal with those errors?*
-*Q3: if you are using remote server, how to transfer files between server and your local PC? (hint: scp for Mac, xftp for Windows)* 
+*Q1: Define relative path and absolute path*  
+*Q2：What ERRORs did you meet and how with deal with those errors?*  
+*Q3: if you are using remote server, how to transfer files between server and your local PC? (hint: scp for Mac, xftp for Windows)*   
 
   
     
