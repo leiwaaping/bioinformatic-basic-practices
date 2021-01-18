@@ -11,3 +11,5 @@ The *shell* acts as an interface between the user and the kernel. Most Linux dis
 
 ### UNIX tutorial
 - UNIX Tutorial for Beginners http://www.ee.surrey.ac.uk/Teaching/Unix/ 
+
+**Q1: Define CPM, TPM and RPKM, and describe their difference?**
