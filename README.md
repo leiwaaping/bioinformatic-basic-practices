@@ -11,11 +11,12 @@ The **shell** acts as an interface between the user and the kernel. Most Linux d
 
 ### practices tutorial
   - UNIX Tutorial for Beginners http://www.ee.surrey.ac.uk/Teaching/Unix/ 
-
+  
+*************************************************************
 *Q1: Define relative path and absolute path*  
 *Q2：What ERRORs did you meet and how with deal with those errors?*  
 *Q3: if you are using remote server, how to transfer files between server and your local PC? (hint: scp for Mac, xftp for Windows)*   
-
+*************************************************************
   
     
     
@@ -36,20 +37,20 @@ The **shell** acts as an interface between the user and the kernel. Most Linux d
   - **Gene annotations** - ENCFF159KBI  
   
   
-  ### Download data (for user with server)
-  1. Search **fastq file(raw reads data)** for [GSE102349](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE102349) in NCBI Database.
+### Download data (for user with server)
+1. Search **fastq file(raw reads data)** for [GSE102349](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE102349) in NCBI Database.
   - randomly select two RNA-seq data , here take GSM2735202 and GSM2735204 as examples.
   - click in samples "GSM2735202" - click SRA "SRX3070255" - get Run ID [SRR5908747](https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR5908747)
   
  For saving times, aLL files have download to Jason's lab server under path ~/nas/Prcatices/  
  
-  2. Download SRA file and convert SRA file to Pair end fastq files (1 SRA will generate 2 fastq file)
+2. Download SRA file and convert SRA file to Pair end fastq files (1 SRA will generate 2 fastq file)
   ```
   prefetch SRR5908747
   fastq-dump --split-3 SRR5908747.sra
   ```
   
-  3.  Also download the reference human genome and appropriate annotations from [UCSC gene browser](https://hgdownload.soe.ucsc.edu/downloads.html#human).
+3.  Also download the reference human genome and appropriate annotations from [UCSC gene browser](https://hgdownload.soe.ucsc.edu/downloads.html#human).
   - **Reference genome** - hg38.fa.gz  
   - **Gene annotations** - genes/hg38.refGene.gtf.gz  
   ```
@@ -58,10 +59,16 @@ The **shell** acts as an interface between the user and the kernel. Most Linux d
   wget https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/genes/hg38.refGene.gtf.gz
   ```
   
-  *Q1: concepts understand:  
-  a. Exon and Intron  
-  b. Gene Expression 
-  *
+*************************************************************
+*Q1: Define Exon，Intron，gene expression*  
+*Q2：What is the principle of throughput sequencing（like illumina)?*  
+*Q3: what is the format for fastq file and gtf file?*   
+*************************************************************
+
+
+  
+## RNA-seq analysis pipelines  
+ 
   
   
   
