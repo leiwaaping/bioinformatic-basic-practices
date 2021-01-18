@@ -21,7 +21,7 @@ The **shell** acts as an interface between the user and the kernel. Most Linux d
     
     
 ## RNA-seq analysis pipelines  
-for individual PC and server user, we set two different fastq file and reference file. since for private PC, the memory might be overload for an normal RNA-seq analysis pipeline, so just change to a smaller dataset. but all pipeline and command should be similar, here we demonstrate in server, please modify your file name and file path according to actual condition.  
+for individual PC and server user, we set two different fastq file and reference file. For the memory of private PC might be overload to run a normal RNA-seq dataset, so just switch to a smaller dataset. but all pipeline and command should be similar, here we demonstrate in server, please modify your file name and file path according to actual condition.  
 
 
 ### Download data (for user with individual PC)
