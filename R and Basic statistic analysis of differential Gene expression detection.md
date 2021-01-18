@@ -28,9 +28,9 @@ Download Expression matrix and clinical information from NCBI ([GSE102349](https
 - sample clinical information: click Series Matrix File(s) and download file *GSE102349_series_matrix.txt.gz*
 - expression data：*GSE102349_NPC_mRNA_processed.txt.gz* 
 
-### Pearson Correlation  
+### basics statistical analysis with R
  
-#### read in file  
+- read in gene expression data, there shoube be 24530 genes and 113 samples
 
 ```{r}
 dat <- as.data.frame(read.table("GSE102349_NPC_mRNA_processed.txt",header = TRUE,sep = "\t", dec = ".",na.strings = "NA",stringsAsFactors=FALSE,check.names = FALSE))
@@ -39,6 +39,40 @@ dat<-dat[,-1]
 head(dat)
 dim(dat)
 ```
+- check missing data  
+
+```{r}
+#check missing value
+f<-function(x) sum(is.na(x))
+#1 = summarize by row; 2= summarize by column
+d<-as.data.frame(apply(dat,2,f))
+d$id=row.names(d)
+head(d[order(d[,1],decreasing=TRUE),])
+
+#convert missing value to 0
+dat[is.na(dat)] <- 0
+
+```
+
+test correlation between two samples, here take NPC0001PT00264T00264 and NPC0001PT00004T00004 as an example.Don't forget to log the RNA expression before scatter plot.  
+
+```{r}
+library(ggplot2)
+library(dplyr)
+
+a=dat[,"NPC0001PT00264T00264"]
+b=dat[,"NPC0001PT00004T00004"]
+cor(a,b,method="pearson")
+ggplot(dat,aes(x=log(dat[,"NPC0001PT00264T00264"]),y=log(dat[,"NPC0001PT00004T00004"])))+ geom_point(size=1,shape=15)+geom_smooth(method=lm)
+```{r}
+
+
+
+
+*************************
+*Q1:what is the difference among pearson correlation, spearman collelation and kendall collelation*
+
+
 
 
  
