@@ -76,7 +76,8 @@ multiple correlation test for the whole matrix.
 c=cor(dat,method="pearson")
 head(c)
 ```
-- gain sample information
+- gain sample information  
+
 see file *GSE102349_series_matrix_survival.csv*, clinical file should involved Sample ID, "event", "time to event" and "clinical stage" extracted from file *GSE102349_series_matrix.txt.gz*. Here we also group samples based on clinical stage. 
 
 ```
