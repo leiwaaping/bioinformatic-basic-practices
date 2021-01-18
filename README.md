@@ -31,7 +31,7 @@ The **shell** acts as an interface between the user and the kernel. Most Linux d
   - After you download the files rename them appropriately (can also use wget options to rename the file during download).
 3. Also download the reference human genome and appropriate annotations from ENCODE (https://www.encodeproject.org/data-standards/reference-sequences/). Need:
   - **Reference genome** - GRCh38_no_alt_analysis_set_GCA_000001405.15
-  - Gene annotations - ENCFF159KBI  
+  - **Gene annotations** - ENCFF159KBI  
   
   
   ### Download data (for user with server)
@@ -46,6 +46,14 @@ The **shell** acts as an interface between the user and the kernel. Most Linux d
   fastq-dump --split-3 SRR5908747.sra
   ```
   
+  3.  Also download the reference human genome and appropriate annotations from [UCSC gene browser](https://hgdownload.soe.ucsc.edu/downloads.html#human).
+  - **Reference genome** - hg38.fa.gz  
+  - **Gene annotations** - genes/hg38.refGene.gtf.gz  
+  ```
+  #Use `wget` to download in server directly.
+  wget http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz
+  wget https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/genes/hg38.refGene.gtf.gz
+  ```
   
   
   
