@@ -1,6 +1,6 @@
 # bioinformatic-basic-practices   Part I
 
-This guidebook aims to understand the RNA-seq count data analysis pipeline and the basics of the statistical tests behind Differential Gene expression detection  
+This guidebook aims to demonstrate the RNA-seq analysis pipeline (Part I) and the basics statistical analysis behind Differential Gene expression detection (Part II) 
 
 ## basic linux prcatices  
 
