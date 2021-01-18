@@ -87,7 +87,7 @@ fastqc -o fastqc/ SRR5908747_1.fastq
 ```  
 
 2. (optional)  trim and filter reads.
-If need trimming, can use [bbduk.sh](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/) or [trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic
+If need trimming, can use [bbduk.sh](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/) or [trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
   
 3. **alignment** using [STAR](https://github.com/alexdobin/STAR)  
 - Index (need to run once only)
