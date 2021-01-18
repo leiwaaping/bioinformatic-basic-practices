@@ -39,8 +39,14 @@ The **shell** acts as an interface between the user and the kernel. Most Linux d
   - randomly select two RNA-seq data , here take GSM2735202 and GSM2735204 as examples.
   - click in samples "GSM2735202" - click SRA "SRX3070255" - get Run ID [SRR5908747](https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR5908747)
   
- For saving times, aLL files have download to Jason's lab server under path ~/nas/Prcatices/
-  2. Download files.
-  `prefetch SRR5908747`
+ For saving times, aLL files have download to Jason's lab server under path ~/nas/Prcatices/  
+  2. Download SRA file and convert SRA file to Pair end fastq files (1 SRA will generate 2 fastq file)
+  ```
+  prefetch SRR5908747
+  fastq-dump --split-3 SRR5908747.sra
+  ```
+  
+  
+  
   
   
