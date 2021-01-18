@@ -10,7 +10,7 @@ This guidebook aims to understand the RNA-seq count data analysis pipeline and t
 The **shell** acts as an interface between the user and the kernel. Most Linux distributions use a graphic user interface (GUI) as their shell, mainly to provide ease of use for their users，like virtual machine with linux system.  But here we highly recommend using a command-line interface (CLI) because it’s more powerful and effective. Tasks that require a multi-step process through GUI can be done in a matter of seconds by typing commands into the CLI.  The CLI can be easily get access to by Terminal in Mac and Putty/Xshell (install required) in Windows.
 
 ### practices tutorial
-  - UNIX Tutorial for Beginners http://www.ee.surrey.ac.uk/Teaching/Unix/ 
+  - [UNIX Tutorial for Beginners](http://www.ee.surrey.ac.uk/Teaching/Unix/)
   
 *************************************************************
 *Q1: Define relative path and absolute path*  
@@ -34,7 +34,7 @@ for individual PC and server user, we set two different fastq file and reference
 2. Download files. You will find the raw sequencing files on the "file details" tab from the respective links. The RNA-seq files are paired end so there are two files (Read 1 and Read 2) for each replicate. Download both ends for both replicates for both polyA+ and total RNA. There should be 8 files in total.
   - You can get the url link for the fastq files by right clicking and coping the download icon next to the Accession. Download the files to the server directly using wget with the url.
   - After you download the files rename them appropriately (can also use wget options to rename the file during download).
-3. Also download the reference human genome and appropriate annotations from ENCODE (https://www.encodeproject.org/data-standards/reference-sequences/). Need:
+3. Also download the reference human genome and appropriate annotations from [ENCODE](https://www.encodeproject.org/data-standards/reference-sequences/). Need:
   - **Reference genome** - GRCh38_no_alt_analysis_set_GCA_000001405.15
   - **Gene annotations** - ENCFF159KBI  
   
