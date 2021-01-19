@@ -75,10 +75,27 @@ multiple correlation test for the whole matrix.
 ```
 c=cor(dat,method="pearson")
 head(c)
-```
-- gain sample information  
+```  
 
-see file *GSE102349_series_matrix_survival.csv*, clinical file should involved Sample ID, "event", "time to event" and "clinical stage" extracted from file *GSE102349_series_matrix.txt.gz*. Here we also group samples based on clinical stage. 
+- **PCA plot**  
+
+```
+#install.packages('ggfortify')
+library(ggfortify)
+dat_pca=t(dat)
+#head(dat_pca[,1:100])
+
+##apply PCA - scale. = TRUE is highly advisable, but default is FALSE. 
+out_pca <- prcomp(dat_pca,scale= TRUE)
+plot(out_pca,type="l")
+autoplot(out_pca,data=dat_pca,size=0.1,label=FALSE,label.size=5)
+```  
+  
+  
+- read in sample information  
+Sample ID, "event", "time to event" and "clinical stage" gain  
+
+see file *GSE102349_series_matrix_survival.csv*, clinical file should involved Sample ID, "event", "time to event" and "clinical_stage" extracted from file *GSE102349_series_matrix.txt.gz*. Here we also group samples based on clinical stage. 
 
 ```
 info <- as.data.frame(read.table("GSE102349_series_matrix_survival.csv",header = TRUE,sep = ",", dec = ".",na.strings = "NA",stringsAsFactors=FALSE,check.names = FALSE))
@@ -88,14 +105,14 @@ dim(info)
 
 #remove missing data and filter out clinical stage I and II samples
 info=info[!info[, "time"] == "N/A",]
-info=info[info[, "clinical stage"] == "III" | info[, "clinical stage"] == "IV",]
+info=info[info[, "clinical_stage"] == "III" | info[, "clinical_stage"] == "IV",]
 
 #set time to numeric datatype
 info$time=as.numeric(as.character(info$time))
 
 dim(info)
 head(info)
-table(info$`clinical stage`)
+table(info$`clinical_stage`)
 ```
 
 - **survival plot**  
