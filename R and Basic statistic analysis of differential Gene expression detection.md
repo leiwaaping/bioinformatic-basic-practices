@@ -145,16 +145,112 @@ ggsurvplot(fit, conf.int=TRUE, pval=TRUE)
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
-BiocManager::install("edgeR")
+BiocManager::install("edgeR")  
+
+library(edgeR)
+library(stats)
+library(ggplot2)
+
+group_list=info$clinical_stage
+dge <- DGEList(counts=dat[,rownames(info)],group=group_list)
+dge <- calcNormFactors(dge)
+
+#filter low expressed gene
+#keep <- rowSums(cpm(dge)>1) >= 2# at least at two sample cpm larger than 1
+#dge <- dge[keep, , keep.lib.sizes=FALSE]
+
+#normalization and Estimated dispersion，gene with large dispersion can be selected as differential expressed genes.
+dge <- calcNormFactors(dge)
+dge <- estimateCommonDisp(dge, verbose=TRUE)
+dge <-estimateTagwiseDisp(dge)
+
+```
+see input expression data, sample information and differential expression analysis result.
+
+```
+head(dat)
+head(info)
+head(dge)
+```  
+
+- **VOLCONA PLOT**  
+```
+#selecte differential expression genes
+selected <- exactTest(dge,pair = c("III","IV")) #group stage III vs stage IV
+top <- topTags(selected,n=15000)  #get top diff 15000 genes
+
+#extract differential expressed genes
+diff=top$table
+diff=diff[is.na(diff$FDR)==FALSE,]
+head(diff)
+dim(diff)
+
+#draw picture
+library(ggplot2)
+DEG=diff
+colnames(DEG)
+plot(DEG$logFC,-log10(DEG$PValue))
+#logFC_cutoff <- with(DEG,mean(abs(logFC)) + 2*sd(abs( logFC)) )
+logFC_cutoff=1  #set cut off
+DEG$change = as.factor(ifelse(DEG$PValue < 0.05 & abs(DEG$logFC) > logFC_cutoff,
+                              ifelse(DEG$logFC > logFC_cutoff ,'UP','DOWN'),'NOT')
+)
+table(DEG$change)
+this_tile <- paste0('Cutoff for logFC is ',round(logFC_cutoff,3),
+                    '\nThe number of up gene is ',nrow(DEG[DEG$change =='UP',]) ,
+                    '\nThe number of down gene is ',nrow(DEG[DEG$change =='DOWN',])
+)
+g = ggplot(data=DEG, aes(,x=logFC, y=-log10(PValue),color=change)) + geom_point(alpha=0.4, size=1.75) +
+  theme_set(theme_set(theme_bw(base_size=20)))+ xlab("log2 fold change") + ylab("-log10 p-value") + 
+  ggtitle(this_tile) +  theme(plot.title = element_text(size=15,hjust = 0.5)) + 
+  scale_colour_manual(values = c('blue','black','red')) ## corresponding to the levels(res$change)
+print(g)
+#ggsave(g,filename = 'volcano.pvalue.png')
 ```
 
 
 
-
-- **ploting heatmap** 
+- **HEATMAP PLOT** 
 
 ```
 #install.packages("pheatmap")
+library(edgeR)
+library(stats)
+library(ggplot2)
+library(pheatmap)
+
+group_list=info$clinical_stage
+dge <- DGEList(counts=dat[,rownames(info)],group=group_list)
+dge <- calcNormFactors(dge)
+
+#normalization and Estimated dispersion，gene with large dispersion can be selected as differential expressed genes.
+dge <- calcNormFactors(dge)
+dge <- estimateCommonDisp(dge, verbose=TRUE)
+dge <-estimateTagwiseDisp(dge)
+
+#selecte differential expression genes
+selected <- exactTest(dge,pair = c("III","IV")) #group stage III vs stage IV
+head(selected$table)
+
+#extract differential expressed genes
+diff=selected$table
+up=diff[order(diff[,"logFC"],decreasing=TRUE),][1:50,] 
+low=diff[order(diff[,"logFC"],decreasing=FALSE),][1:50,]
+diff=rbind(up,low)
+head(diff)
+dim(diff)
+
+aa=t(dat[row.names(diff),])
+aa=t(scale(aa))
+
+#deal with outlier to embellish the figure （if necessary)
+aa[aa>=4]=4
+
+p<-pheatmap(aa,show_rownames=T, cluster_cols=T, cluster_rows=T,cex=1, clustering_distance_rows="euclidean", cex=1,clustering_distance_cols="euclidean", clustering_method="complete", border_color=FALSE)
+p
+#colnames(aa[,p$tree_col[["order"]]]) 
+#rownames(aa[p$tree_row[["order"]],]) 
+
 ```
 
 
@@ -163,6 +259,9 @@ BiocManager::install("edgeR")
 *************************
 *Q1:How large difference among the results from pearson correlation, spearman collelation and kendall collelation*
 *Q2:which raw information should be extracted from GSE102349_series_matrix.txt file?*
+*Q3: What edgeR actually do? Why need to do normalization?
+*（additional）Try to understand each figure*
+***************************
 
 
 
