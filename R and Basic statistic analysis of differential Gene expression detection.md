@@ -12,12 +12,12 @@ You can select to run R in your private PC,download R and Rstudio locally:
 - Rstudio:https://rstudio.com/products/rstudio/download/ (Windows recommended)   
  Mac user can type "R" in Terminal and run R directly.  
  
- or run ** in jupyter notebook with R environment via conda (multiple steps required).
+ or run [DE.ipynb](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/DE.ipynb) in jupyter notebook with R environment via conda (multiple steps required).
  you can activate jupyter notebook in JW's lab server with command:  
  ```
  jupyter notebook --ip=147.**.**.**
  ```
- copy the first printed http web link and open it in browser.click top right button "new" - "R" to created a new R program, or double click to open code **
+ copy the first printed http web link and open it in browser.click top right button "new" - "R" to created a new R program, or double click to open code [DE.ipynb](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/DE.ipynb)
  
  
 ### R practise  
