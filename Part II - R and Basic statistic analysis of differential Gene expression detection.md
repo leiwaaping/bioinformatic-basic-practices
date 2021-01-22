@@ -23,9 +23,9 @@ You can select to run R in your private PC,download R and Rstudio locally:
 ### R practise  
  - [R Tutorial for Beginners: Learn R Programming Language](https://www.guru99.com/r-tutorial.html) 
 
-### Expression matrix download  
+### Expression matrix download  (saved in doc dir also)
 Download Expression matrix and clinical information from NCBI ([GSE102349](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE102349))
-- sample clinical information: click Series Matrix File(s) and download file *GSE102349_series_matrix.txt.gz*
+- sample clinical information: click Series Matrix File(s) and download file *GSE102349_series_matrix.txt.gz*；;for user in local PC, can try *"GSE102349_series_matrix_5000gene.txt"* in doc directory.
 - expression data：*GSE102349_NPC_mRNA_processed.txt.gz* 
 
 ### basics statistical analysis with R
