@@ -105,7 +105,7 @@ for individual PC and server user, we set two different fastq file and reference
   
 *************************************************************
 *Q4: Define Exon，Intron，gene expression*  
-*Q5：Explain the principle of high throughput sequencing（like illumina) on your own word*  
+*Q5：Explain the principle of high throughput sequencing（like illumina) in your own words*  
 *Q6: what is the format for fastq file and gtf file?*   
 *************************************************************
 
