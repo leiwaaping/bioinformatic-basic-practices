@@ -1,4 +1,4 @@
-## Part 0: TCGA,UCSC,cBIoportal,GEPIA2 application
+## Part 0: TCGA,cBIoportal,GEPIA2 application
 
 ### The Cancer Genome Atlas Program (TCGA)  
 https://portal.gdc.cancer.gov/   
@@ -68,7 +68,7 @@ Q2: which is the most high risk gene for lung cancer?
 **************************************  
 
 **Task3：vilizate and explain a study result .**   
-select a study (take the MSK-IMPACT as example) —— "query by genes" —— input target genes  
+select a study (take the MSK-IMPACT as example) —— "query by genes" —— input target genes —— "summit Query"  
 ![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal4.png)  
 ![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal5.png)  
 
