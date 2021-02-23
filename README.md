@@ -16,8 +16,8 @@ You can search and get to know some background knowledge before starting this pr
 3. What is the format for fastq file and gtf file?
 4. Introduce the TCGA database in your own words.  
 
-## Doing bioinformatics analysis with Database and website  
-Part 0: TCGA,UCSC,cBIoportal,GEPIA2 application  
+## Doing bioinformatics analysis with Database and online tools 
+Part 0: TCGA,cBIoportal,GEPIA2 application  
 
 ## Coding practices
 Part I: LINUX + RNA-seq analysis pipeline  
