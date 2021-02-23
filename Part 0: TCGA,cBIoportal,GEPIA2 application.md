@@ -35,18 +35,47 @@ TCGA as a cancer samples data base, most data are controlled, if you want to che
 http://gepia2.cancer-pku.cn/#index  
 ![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/GEPIA1.png)  
 
-**Task1: Find Differential expressed genes in ACC.**  
+**Task1: Find differential expressed genes in ACC.**  
 "Expression Analysis" —— "Differential Genes" —— select Dataset(cancer name) —— set Log2FC and qvalue cutoff (use default here) —— "List", then you will get the DE genes in ACC.  
 ![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/GEPIA2.png) 
 
-**Task2: Check gene IGF2 expression in tumor samples and normal sample in ACC and BLCA.**  
+**Task2: Check gene IGF2 expression in tumor samples and normal samples in ACC and BLCA.**  
 "Expression Analysis" —— "Expression DIY" —— "Box Plot" —— add Dataset(cancer name)   
 ![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/GEPIA3.png)   
 ![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/GEPIA4.png)   
 
 **Task3: Try to do a survival analysis, see if the IGF2 gene expression shows difference survival percentage in ACC.**  
 
-GEPIA2 is a helpful tool in TCGA RNA-seq basic analysis. Could you please come up with some questions related gene expression in Cancer samples, and try to answer them with GEPIA2?  
+**Task4：GEPIA2 is a helpful tool in TCGA RNA-seq basic analysis. Could you please come up with some questions related gene expression in Cancer samples, and try to answer them with GEPIA2?**  
+
+  
+  
+Above analysis mostly based on gene expression. For mutations in genes, tool cbioportal is helpful.  
+
+## cbioportal for cancer genome  
+https://www.cbioportal.org/  
+![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal1.png)  
+
+**Task1：check common BRCA1 gene mutations in breast cancer.**  
+select "BRCA1" in *Quick search* —— click "mutation" —— search "breast", 27 mutations shown.  
+![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal2.png)   
+  
+**Task2：try to search clinical and mutation information about lung cancer.**   
+![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal3.png)    
+*************************************  
+Q1: What dose the heatmap shows?  
+Q2: which is the most high risk gene for lung cancer?  
+**************************************  
+
+**Task3：vilizate and explain a study result .**   
+select a study (take the MSK-IMPACT as example) —— "query by genes" —— input target genes  
+![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal4.png)  
+![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal5.png)  
+
+
+
+
+ 
 
 
 
