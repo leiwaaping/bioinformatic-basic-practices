@@ -70,6 +70,7 @@ https://www.cbioportal.org/
 unselect "Putative CNA from GISTIC" —— type KRAS in *Enter Genes* —— "Submit Query"  —— "Mutations"  , G12C  
 ![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal03.png) 
 ![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal04.png)  
+![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal08.png)  
 *************************************  
 Q1: What is the meaning of "Missense"?  
 Q2: How many samples are supporting this hostpot point mutation? how to get detail information of those samples?  
