@@ -30,7 +30,7 @@ then "Files" —— select "VCF" in *Data Format*，click one samples into detai
 
 TCGA as a cancer samples data base, you can easily get a opened and small file with "Download" button.  
 For large file and batch download, you can "Add to Cart" first, then download Manifest file and use [GDC Data Transfer Tool](https://gdc.cancer.gov/access-data/gdc-data-transfer-tool) in server.  
-![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/TCGA5.png)  
+![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/TCGA6.png)  
 
 Since most RNA-seq data in TCGA are controlled, if you want to do basic the gene analysis among TCGA samples, online tools GEPIA2 can help you!   
   
@@ -48,9 +48,9 @@ http://gepia2.cancer-pku.cn/#index
 ![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/GEPIA3.png)   
 ![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/GEPIA4.png)   
 
-**Task3: Try to do a survival analysis, see if the IGF2 gene expression shows difference survival percentage in ACC.**  
+**Challenge1: Try to do a survival analysis, see if the IGF2 gene expression shows difference survival percentage in ACC.**  
 
-**Task4：GEPIA2 is a helpful tool in TCGA RNA-seq basic analysis. Could you please come up with some questions related gene expression in Cancer samples, and try to answer them with GEPIA2?**  
+**Challenge2：GEPIA2 is a helpful tool in TCGA RNA-seq basic analysis. Could you please come up with some questions related gene expression in Cancer samples, and try to answer them with GEPIA2?**  
 
   
   
@@ -60,21 +60,38 @@ Above analysis mostly based on gene expression. For mutations in genes, tool cbi
 https://www.cbioportal.org/  
 ![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal0.png)  
 
-**Task1：check common BRCA1 gene mutations in breast cancer.**  
-select "BRCA1" in *Quick search* —— click "mutation" —— search "breast", 27 mutations shown.  
-![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal2.png)   
+**Task1：check TP53 gene mutations happened in all cancer.**  
+"Quick search" —— select "TP53" in —— "Mutations", you can search keyword to selected cancer type.
+![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal02.png)   
   
-**Task2：try to search clinical and mutation information about lung cancer.**   
-![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal3.png)    
+**Task2：What is the most common hotspot point mutation in KRAS in lung cancer?.**   
+"Query" —— select "Lung" —— select study *Lung Adenocarcinoma(TCGA,Nature 2014)* —— "Query By Gene"  
+unselect "Putative CNA from GISTIC" —— type KRAS in *Enter Genes* —— "Submit Query"  —— "Mutations"  , G12C  
+![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal03.png) 
+![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal04.png)  
 *************************************  
-Q1: What dose the heatmap shows?  
-Q2: which is the most high risk gene for lung cancer?  
+Q1: What is the meaning of "Missense"?  
+Q2: How many samples are supporting this hostpot point mutation? how to get detail information of those samples?  
 **************************************  
 
-**Task3：vilizate and explain a study result .**   
-select a study (take the MSK-IMPACT as example) —— "query by genes" —— input target genes —— "summit Query"  
-![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal4.png)  
-![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal5.png)  
+**Task3：use cbioportal to look at difference in survival for lung cancer patients with TP53 and/or KRAS mutations .**   
+"Query" —— select "Lung" —— select study *Lung Adenocarcinoma(TCGA,Nature 2014)* —— "Query By Gene" 
+unselect "Putative CNA from GISTIC" —— type KRAS and TP53 in *Enter Genes* —— "Submit Query"  —— "Survival"  , Not statistical significant in survival analysis   
+![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal05.png)  
+
+How about divided into 3 group "TP53 only", "TP53 + KRAS", and "KRAS only".  
+"overlap" —— select "TP53(75)" and "KRAS(107)" group, we can see there are some overlap samples(25)  
+group samples：click "82" —— "Creat Group From Seleted Diagram Areas" —— "Submit" (name the other 2 groups in the same way)  
+select 3 new groups only and click "Survival"  
+![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal06.png) 
+![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal07.png)  
+
+**Challenge1:What is the most significantly higher expressed gene in ERCC2 mutant versus WT bladder cancer?**  
+
+
+
+
+
 
 
 
