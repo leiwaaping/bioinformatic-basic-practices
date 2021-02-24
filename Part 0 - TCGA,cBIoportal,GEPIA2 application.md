@@ -47,10 +47,11 @@ http://gepia2.cancer-pku.cn/#index
 "Expression Analysis" —— "Expression DIY" —— "Box Plot" —— add Dataset(cancer name)   
 ![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/GEPIA3.png)   
 ![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/GEPIA4.png)   
-
+  
+*******************************************************  
 **Challenge1: Try to do a survival analysis, see if the IGF2 gene expression shows difference survival percentage in ACC.**  
-
-**Challenge2：GEPIA2 is a helpful tool in TCGA RNA-seq basic analysis. Could you please come up with some questions related gene expression in Cancer samples, and try to answer them with GEPIA2?**  
+**Challenge2：GEPIA2 is a helpful tool in TCGA RNA-seq basic analysis. Could you please come up with some questions related gene expression in Cancer samples, and try to answer them with GEPIA2?**   
+*********************************************************  
 
   
   
@@ -86,8 +87,9 @@ select 3 new groups only and click "Survival"
 ![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal06.png) 
 ![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal07.png)  
 
+******************************************************  
 **Challenge1:What is the most significantly higher expressed gene in ERCC2 mutant versus WT bladder cancer?**  
-
+*******************************************************  
 
 
 
