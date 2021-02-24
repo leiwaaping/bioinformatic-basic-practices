@@ -28,7 +28,11 @@ then "Files" —— select "VCF" in *Data Format*，click one samples into detai
 ![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/TCGA4.png)  
 ![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/TCGA5.png)  
 
-TCGA as a cancer samples data base, most data are controlled, if you want to check the RNA-seq expression pattern  among TCGA samples, website GEPIA2 can help you !  
+TCGA as a cancer samples data base, you can easily get a opened and small file with "Download" button.  
+For large file and batch download, you can "Add to Cart" first, then download Manifest file and use [GDC Data Transfer Tool](https://gdc.cancer.gov/access-data/gdc-data-transfer-tool) in server.  
+![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/TCGA5.png)  
+
+Since most RNA-seq data in TCGA are controlled, if you want to do basic the gene analysis among TCGA samples, online tools GEPIA2 can help you!   
   
   
 ### Gene Expression Profiling Interactive Analysis(GEPIA2)  
@@ -54,7 +58,7 @@ Above analysis mostly based on gene expression. For mutations in genes, tool cbi
 
 ## cbioportal for cancer genome  
 https://www.cbioportal.org/  
-![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal1.png)  
+![image](https://github.com/leiwaaping/bioinformatic-basic-practices/blob/main/pics/cbioportal0.png)  
 
 **Task1：check common BRCA1 gene mutations in breast cancer.**  
 select "BRCA1" in *Quick search* —— click "mutation" —— search "breast", 27 mutations shown.  
