@@ -21,7 +21,7 @@ The **shell** acts as an interface between the user and the kernel. Most Linux d
 ### linux_practice(opinional) 
 (provide hints and answer from the example file only)  
 
-1. Download a gtf file for plactise; or you can use any other gtf file you have.
+1.Download a gtf file for plactise; or you can use any other gtf file you have.
 ```
 wget http://hgdownload.soe.ucsc.edu/goldenPath/felCat9/bigZips/genes/felCat9.refGene.gtf.gz
 gunzip -d felCat9.refGene.gtf.gz
@@ -39,22 +39,19 @@ gunzip -d felCat9.refGene.gtf.gz
 5.print out the first column (ChromosomeID) of file CDS.txt.  
 (try "cut")
 
-5.search keyword "gene" in gtf file , why the result from "grep -c" and "grep -o \*\*|wc -l" are different?  
+6.search keyword "gene" in gtf file , why the result from "grep -c" and "grep -o \*\*|wc -l" are different?  
 ($grep -c "gene" felCat9.refGene.gtf, 8487; $grep -o "gene" felCat9.refGene.gtf|wc -l, 16974)  
 
-6.How many kind of transcript listed in the gtf file? and what's the number size of each kind of transcript respectively?  
-(combine "grep" "sort" and "uniq" together; 6)  
+7.How many kind of transcript(column 3) listed in the gtf file? and what's the number size of each kind of transcript respectively?  
+(combine "grep" "sort" and "uniq" together)  
 
-7.use vim editor to add a header at the first line  of gtf file.  
+8.use vim editor to add a header at the first line  of gtf file.  
 ("vim" and "I" to get access to the editing mode."Esc" to the control mode,":wq" to save and quit)  
 
-8.Jump to line 1000 of gtf file in vim editor  
-
-9. replace all "refGene" with "CatRef".  
+9.Jump to line 1000 of gtf file in vim editor  
+  
+10.replace all "refGene" with "CatRef".  
 (try "vim" or "sed")
-
-10.delete gtf file and the txt file.  
-(try "rm")  
     
     
 ## RNA-seq analysis pipelines  
