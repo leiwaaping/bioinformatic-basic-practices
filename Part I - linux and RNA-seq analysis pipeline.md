@@ -86,7 +86,17 @@ for individual PC and server user, we set two different fastq file and reference
   prefetch SRR5908747
   fastq-dump --split-3 SRR5908747.sra
   ```
+  - prefetch download
+  ```
+  wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.9.6/sratoolkit.2.9.6-ubuntu64.tar.gz  
+  tar zxvf sratoolkit.2.9.6-ubuntu64.tar.gz  
+  cd sratoolkit.2.9.6-ubuntu64  
   
+  #add path  
+  echo ' export PATH=$PATH:YOUR_PATH/sratoolkit.2.9.6-ubuntu64/bin' >> ~/.bashrc  
+  source ~/.bashrc
+```  
+
 3.  Also download the reference human genome and appropriate annotations from [UCSC gene browser](https://hgdownload.soe.ucsc.edu/downloads.html#human).
   - **Reference genome** - hg19.fa.gz  
   - **Gene annotations** - genes/hg19.refGene.gtf.gz  
@@ -147,7 +157,16 @@ STAR --runThreadN N --genomeDir ref_index/ --readFilesIn ~/nas/Prcatices/fastq/S
 makdir count_result/
 featureCounts -T N -a  ~/nas/Prcatices/ref/hg19.refGene.gtf -o count_result/SRR5908747count.txt bam/SRR5908747Aligned.out.sam
 ``` 
-
+- featureCounts download  
+  download [subread-2.0.1-Linux-x86_64.tar.gz](https://sourceforge.net/projects/subread/files/subread-2.0.1/) or other latest version.
+  ```  
+  tar zxvf subread-2.0.1-Linux-x86_64.tar.gz  
+  cd subread-2.0.1-Linux-x86_64  
+  
+  #add path  
+  echo ' export PATH=$PATH:YOUR_PATH/subread-2.0.1-Linux-x86_64/bin' >> ~/.bashrc  
+  source ~/.bashrc
+```  
 
 *************************************************************
 *Q7: How to evaluate the quality of fastq file?*  
