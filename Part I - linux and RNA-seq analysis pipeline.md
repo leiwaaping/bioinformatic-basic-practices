@@ -165,15 +165,11 @@ featureCounts -T N -a  ~/nas/Prcatices/ref/hg19.refGene.gtf -o count_result/SRR5
   
   #add path  
   echo ' export PATH=$PATH:YOUR_PATH/subread-2.0.1-Linux-x86_64/bin' >> ~/.bashrc  
-  source ~/.bashrc
-```  
+  source ~/.bashrc  
+  ```   
 
 *************************************************************
 *Q7: How to evaluate the quality of fastq file?*  
 *Q8：what is the meaning of each column in a Sam file?*  
 *Q9: which value in featureCounts output file can see as the expression level of a gene?*   
 *************************************************************  
-  
- 
-  
-  
