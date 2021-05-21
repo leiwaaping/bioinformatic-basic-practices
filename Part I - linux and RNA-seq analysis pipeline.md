@@ -43,7 +43,7 @@ gunzip -d felCat9.refGene.gtf.gz
 ($grep -c "gene" felCat9.refGene.gtf, 8487; $grep -o "gene" felCat9.refGene.gtf|wc -l, 16974)  
 
 7.How many kind of transcript(column 3) listed in the gtf file? and what's the number size of each kind of transcript respectively?  
-(combine "grep" "sort" and "uniq" together)  
+(combine "cut" "sort" and "uniq" together)  
 
 8.use vim editor to add a header at the first line  of gtf file.  
 ("vim" and "I" to get access to the editing mode."Esc" to the control mode,":wq" to save and quit)  
